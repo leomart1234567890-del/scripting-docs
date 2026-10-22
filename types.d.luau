@@ -25,6 +25,8 @@ declare extern type Server with
     objectManager: GameObjectManager
     --- …
     map: TileMap
+    --- …
+    customInputListeners: List<InputListener>
     --- Позволяет получить объект ClientInfo по индексу игрока.
     function getClientInfo(self, index: number): ClientInfo?
     --- Позволяет проверить, завершилась ли интро-анимация боя.
@@ -448,6 +450,9 @@ end
 declare extern type BasicListener with
 end
 
+declare extern type InputListener with
+end
+
 export type List<T> = Iterable<T>
 
 export type ArrayList<T> = List<T>
@@ -609,6 +614,8 @@ declare SkillEventListener: {}
 declare SourceListener: {}
 
 declare BasicListener: {}
+
+declare InputListener: {}
 
 declare Iterable: {}
 

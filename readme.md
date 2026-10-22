@@ -87,10 +87,11 @@ end
 
 | Название       | Тип                                     | Применение                                                                               |
 |----------------|-----------------------------------------|------------------------------------------------------------------------------------------|
-| lookup         | (type: number, name: string) ⇒ Data     | Позволяет получить объект Data по его типу и названию.                                   |
+| lookup         | (subtype: number, name: string) ⇒ Data  | Позволяет получить объект Data по его типу и названию.                                   |
 | createObject   | (data: Data) ⇒ LogicGameObject          | Позволяет создать новый экземпляр LogicGameObject для конкретного Data.                  |
 | createCallback | (class: string, arg: function) ⇒ Object | Позволяет преобразовать Lua-функцию в Java-объект. Используется для подписки на события. |
 | log            | (params: string...) ⇒ void              | Печатает сообщение в отладочные журналы и в чат дружеской комнаты, если применимо.       |
+| event          | (action: string, data: table) ⇒ void    | Отправляет событие на клиент.                                                            |
 
 Эти функции доступны глобально.
 
@@ -159,6 +160,7 @@ character.takingDamageListeners:add(callbackImpl)
 | SkillEventListener  | (skill: Skill) ⇒ void                                                                                                             |
 | SourceListener      | (origin: AttackOrigin) ⇒ void                                                                                                     |
 | BasicListener       | () ⇒ void                                                                                                                         |
+| InputListener       | (index: number, spec0: number, spec1: number) ⇒ void                                                                              |
 
 ## Безопасность
 
