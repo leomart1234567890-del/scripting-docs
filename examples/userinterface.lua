@@ -50,7 +50,7 @@ function input(index, id, input)
 end
 
 local listener = createCallback("InputListener", input)
-server.inputListeners:add(listener)
+server.customInputListeners:add(listener)
 
 function tick()
     if server:isIntroFinished() and not button_shown then
